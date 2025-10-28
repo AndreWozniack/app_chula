@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../data/models/passo.dart';
-import 'passoCard.dart';
-import 'passoDetail.dart';
+import 'passo_card.dart';
+import 'passo_detail.dart';
 
 class PassosView extends StatefulWidget {
   const PassosView({super.key});
@@ -11,12 +11,13 @@ class PassosView extends StatefulWidget {
 }
 
 class _PassosViewState extends State<PassosView> {
+  //TODO: Replace with data from local database
   final passos = <Passo>[
     Passo(id: '1', nome: 'Tacorrido', dificuldade: 3, criatividade: 4, esforcoFisico: 5, criador: 'André Wozniack'),
     Passo(id: '2', nome: 'Trinnca', dificuldade: 2, criatividade: 5, esforcoFisico: 3, criador: 'Arthur Wozniack'),
     Passo(id: '3', nome: 'H20', dificuldade: 2, criatividade: 5, esforcoFisico: 3, criador: 'Samuel Affornalli'),
     Passo(id: '4', nome: 'Serrote', dificuldade: 2, criatividade: 5, esforcoFisico: 3, criador: 'Leonardo Foss'),
-  ];
+  ]..sort((a, b) => a.nome.compareTo(b.nome));
 
   @override
   Widget build(BuildContext context) {

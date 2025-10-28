@@ -267,10 +267,9 @@ class _BuildStatRow extends StatelessWidget {
   final int maxValue;
 
   const _BuildStatRow({
-    super.key,
     required this.label,
     required this.value,
-    this.maxValue = 5,
+    this.maxValue = 10,
   });
 
   @override

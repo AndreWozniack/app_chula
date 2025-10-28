@@ -6,7 +6,7 @@ void main() {
 }
 
 class ChulaApp extends StatelessWidget {
-  const ChulaApp({Key? key}) : super(key: key);
+  const ChulaApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,6 @@ class ChulaApp extends StatelessWidget {
           primary: Colors.blue,
           secondary: Colors.blueAccent,
           surface: Colors.grey[900]!,
-          background: Colors.black,
         ),
         scaffoldBackgroundColor: Colors.black,
         appBarTheme: AppBarTheme(

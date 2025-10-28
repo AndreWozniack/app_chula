@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../data/models/passo.dart'; // Ajuste o caminho se necessário
+import '../../data/models/passo.dart';
 
 class PassoCard extends StatelessWidget {
   final Passo passo;
@@ -26,9 +26,8 @@ class PassoCard extends StatelessWidget {
         child: InkWell(
           onTap: onTap,
           child: Padding(
-            // 1. Reduzido o padding vertical interno
             padding: const EdgeInsets.symmetric(
-                horizontal: 24.0, vertical: 16.0), // <-- MUDANÇA (era 20)
+                horizontal: 24.0, vertical: 16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -53,8 +52,7 @@ class PassoCard extends StatelessWidget {
                   ),
                 ),
 
-                // 2. Reduzido o espaçador principal
-                const SizedBox(height: 16), // <-- MUDANÇA (era 24)
+                const SizedBox(height: 16),
               ],
             ),
           ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:app_chula/features/sequences/sequencesView.dart';
-import 'package:app_chula/features/passos/passosView.dart';
+import 'package:app_chula/features/passos/passos_view.dart';
 import 'package:app_chula/features/festivals/fastivalsView.dart';
 
 class HomePage extends StatefulWidget {

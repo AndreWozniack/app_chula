@@ -56,23 +56,25 @@ class PassoCard extends StatelessWidget {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                child: const Divider(
-                  color: Colors.white54,
-                  thickness: 0.3,
-                  height: 0.2,
-                ),
-              ),
-              const SizedBox(height: 8),
-              Row(spacing: 20,
-              mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _SpecsInfo(label: 'Dificuldade', value: passo.dificuldade),
-                  _SpecsInfo(label: 'Criatividade', value: passo.criatividade),
-                  _SpecsInfo(label: 'Esforço Físico', value: passo.esforcoFisico),
-                ],
-              ),
+
+              // Specs Row
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              //   child: const Divider(
+              //     color: Colors.white54,
+              //     thickness: 0.3,
+              //     height: 0.2,
+              //   ),
+              // ),
+              // const SizedBox(height: 8),
+              // Row(spacing: 20,
+              // mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     _SpecsInfo(label: 'Dificuldade', value: passo.dificuldade),
+              //     _SpecsInfo(label: 'Criatividade', value: passo.criatividade),
+              //     _SpecsInfo(label: 'Esforço Físico', value: passo.esforcoFisico),
+              //   ],
+              // ),
               const SizedBox(height: 16),
             ])),
       ),

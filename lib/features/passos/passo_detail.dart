@@ -68,7 +68,7 @@ class _PassoDetailState extends State<PassoDetail> {
       _dificuldade = widget.passo?.dificuldade ?? 1;
       _criatividade = widget.passo?.criatividade ?? 1;
       _esforcoFisico = widget.passo?.esforcoFisico ?? 1;
-      
+
       _isInEditMode = false;
     });
   }
@@ -106,16 +106,16 @@ class _PassoDetailState extends State<PassoDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          _isNewPasso ? 'Novo Passo' : (_isInEditMode ? 'Editar Passo' : 'Detalhes do Passo')
-        ),
+        title: Text(_isNewPasso
+            ? 'Novo Passo'
+            : (_isInEditMode ? 'Editar Passo' : 'Detalhes do Passo')),
         actions: _buildAppBarActions(),
       ),
       body: _isInEditMode ? _buildEditForm() : _buildReadOnlyView(),
     );
   }
 
-  // --- WIDGET DE VISUALIZAÇÃO ---
+  // --- VISUALIZAÇÃO ---
   Widget _buildReadOnlyView() {
     final passo = widget.passo!;
 
@@ -125,26 +125,22 @@ class _PassoDetailState extends State<PassoDetail> {
         Text(
           passo.nome,
           style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                fontWeight: FontWeight.w700,
-                fontFamily: 'Poppins'
-              ),
+              fontSize: 32, 
+              fontWeight: FontWeight.w700, 
+              fontFamily: 'Poppins'),
         ),
-        
         if (passo.criador != null && passo.criador!.isNotEmpty)
           Padding(
             padding: const EdgeInsets.only(top: 4.0),
             child: Text(
               'Por: ${passo.criador!}',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w300,
-                    fontStyle: FontStyle.italic,
-                    fontFamily: 'Poppins'
-                  ),
+                  fontWeight: FontWeight.w300,
+                  fontStyle: FontStyle.italic,
+                  fontFamily: 'Poppins'),
             ),
           ),
-        
         const SizedBox(height: 32),
-
         _BuildStatRow(
           label: 'Dificuldade',
           value: passo.dificuldade ?? 0,
@@ -183,7 +179,7 @@ class _PassoDetailState extends State<PassoDetail> {
               return null;
             },
           ),
-          
+
           // TODO: Adicionar um TextFormField para o 'Criador' se necessário
 
           const SizedBox(height: 32),
@@ -205,7 +201,7 @@ class _PassoDetailState extends State<PassoDetail> {
             onChanged: (v) => setState(() => _esforcoFisico = v),
           ),
           const SizedBox(height: 32),
-          
+
           if (!_isNewPasso)
             FilledButton(
               onPressed: () {
@@ -239,11 +235,13 @@ class _PassoDetailState extends State<PassoDetail> {
             children: [
               Text(
                 label,
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
               ),
               Text(
                 value.toString(),
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
             ],
           ),
@@ -290,30 +288,30 @@ class _BuildStatRow extends StatelessWidget {
             style: textStyle,
           ),
         ),
-        Row(children: [
-                  Expanded(
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: LinearProgressIndicator(
-              value: normalizedValue,
-              minHeight: 12,
-              backgroundColor: const Color(0xFFE8DEF8),
-              color: const Color(0xFF008CFF),
+        Row(
+          children: [
+            Expanded(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: LinearProgressIndicator(
+                  value: normalizedValue,
+                  minHeight: 12,
+                  backgroundColor: const Color(0xFFE8DEF8),
+                  color: const Color(0xFF008CFF),
+                ),
+              ),
             ),
-          ),
-        ),
-
-        const SizedBox(width: 18),
-
-        SizedBox(
-          width: 24,
-          child: Text(
-            value.toString(),
-            textAlign: TextAlign.right,
-            style: textStyle,
-          ),
-        ),
-        ],)
+            const SizedBox(width: 18),
+            SizedBox(
+              width: 24,
+              child: Text(
+                value.toString(),
+                textAlign: TextAlign.right,
+                style: textStyle,
+              ),
+            ),
+          ],
+        )
       ],
     );
   }
